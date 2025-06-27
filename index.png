@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fábulas Café</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom right, #fbead1, #e9d5c1);
-      color: #4b2e2e;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px;
-      position: relative;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fdf6ec, #f1e4d0);
       overflow: hidden;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #4b2e2e;
+      padding: 20px;
+    }
+
+    .mensagem {
+      font-size: 28px;
+      text-align: center;
+      animation: fadeInUp 2s ease-out;
+      white-space: pre-line;
+      z-index: 2;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .icon-link {
@@ -23,14 +50,16 @@
       align-items: center;
       gap: 15px;
       background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 15px 25px;
+      border-radius: 12px;
+      padding: 15px 20px;
       margin: 10px 0;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-decoration: none;
       color: #4b2e2e;
-      font-size: 1.2em;
-      transition: background 0.3s;
+      font-size: 1.1em;
+      transition: background 0.3s ease;
+      width: 100%;
+      max-width: 400px;
     }
 
     .icon-link:hover {
@@ -42,38 +71,53 @@
       height: 32px;
     }
 
-    footer {
-      margin-top: 50px;
-      opacity: 0.7;
+    .logo-final {
+      margin-top: 40px;
+      opacity: 0.8;
+      z-index: 2;
     }
 
-    footer img {
+    .logo-final img {
       width: 100px;
     }
 
-    /* Xícaras flutuando */
-    .cup {
-      position: absolute;
-      width: 50px;
-      opacity: 0.05;
-      animation: float 20s infinite;
+    .floating {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
     }
 
-    .cup1 { top: 10%; left: 5%; animation-delay: 0s; }
-    .cup2 { top: 30%; right: 10%; animation-delay: 5s; }
-    .cup3 { bottom: 20%; left: 20%; animation-delay: 10s; }
-    .cup4 { bottom: 5%; right: 15%; animation-delay: 15s; }
+    .cup {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-image: url('Xica.png');
+      background-size: cover;
+      animation: floatUp 12s linear infinite;
+      opacity: 0.12;
+    }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      30% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Fábulas Café</h1>
+  <div class="mensagem">Bem-vindo ao Fábulas Café ☕\nEscolha abaixo uma opção:</div>
 
   <a class="icon-link" href="https://wa.me/message/XJOCYNPNDO4DD1" target="_blank">
     <img src="whats.png" alt="WhatsApp"/>
@@ -90,22 +134,30 @@
     Siga-nos no Instagram
   </a>
 
-  <div class="icon-link">
+  <div class="icon-link" style="cursor: default;">
     <img src="wifi.png" alt="Wi-Fi"/>
     Conecte-se à nossa rede Wi-Fi:<br/>
     <strong>fábulas café</strong><br/>
     Senha: <strong>Cafe2025</strong>
   </div>
 
-  <footer>
-    <img src="Fabu.png" alt="Logotipo Fábulas Café"/>
-  </footer>
+  <div class="logo-final">
+    <img src="Fabu.png" alt="Logo Fábulas Café" />
+  </div>
 
-  <!-- Xícaras flutuando -->
-  <img src="Xica.png" class="cup cup1" />
-  <img src="Xica.png" class="cup cup2" />
-  <img src="Xica.png" class="cup cup3" />
-  <img src="Xica.png" class="cup cup4" />
+  <div class="floating" id="floating"></div>
+
+  <script>
+    function createCup() {
+      const cup = document.createElement('div');
+      cup.classList.add('cup');
+      cup.style.left = Math.random() * 100 + 'vw';
+      cup.style.animationDuration = 8 + Math.random() * 4 + 's';
+      document.getElementById('floating').appendChild(cup);
+      setTimeout(() => cup.remove(), 12000);
+    }
+    setInterval(createCup, 300);
+  </script>
 
 </body>
 </html>
