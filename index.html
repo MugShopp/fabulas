@@ -23,12 +23,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      padding: 40px 20px 100px;
+      text-align: center;
       min-height: 100vh;
       position: relative;
-      overflow: hidden;
-      text-align: center;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -64,8 +63,8 @@
     }
 
     .link-item img {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       object-fit: contain;
       flex-shrink: 0;
     }
@@ -75,10 +74,11 @@
       flex-direction: column;
       font-size: 1rem;
       line-height: 1.4;
+      text-align: left;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
     }
 
     footer img {
@@ -112,12 +112,16 @@
         transform: translateY(-100vh) rotate(360deg);
       }
     }
+
+    .spacer {
+      height: 60px;
+    }
   </style>
 </head>
 <body>
 
   <div class="xicaras">
-    <img src="Xica.png" style="left: 15%; animation-delay: 0s;" />
+    <img src="Xica.png" style="left: 10%; animation-delay: 0s;" />
     <img src="Xica.png" style="left: 50%; animation-delay: 5s;" />
     <img src="Xica.png" style="left: 80%; animation-delay: 10s;" />
   </div>
@@ -141,7 +145,7 @@
   </a>
 
   <div class="link-item">
-    <img src="wifi.png" alt="Wi-Fi" />
+    <img src="wifi.png?v=2" alt="Wi-Fi" />
     <div class="wifi-info">
       <strong>Conecte-se à nossa rede Wi-Fi</strong>
       Rede: <strong>fábulas café</strong><br>
@@ -152,6 +156,8 @@
   <footer>
     <img src="Fabu.png" alt="Logo Fábulas" />
   </footer>
+
+  <div class="spacer"></div>
 
 </body>
 </html>
