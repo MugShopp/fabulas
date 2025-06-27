@@ -46,13 +46,13 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 15px;
+      gap: 20px;
       background: #F6F3EF;
-      padding: 14px 20px;
-      border-radius: 12px;
-      margin: 12px 0;
+      padding: 16px 22px;
+      border-radius: 14px;
+      margin: 14px 0;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       text-decoration: none;
       color: #4B3B2A;
       font-size: 1.1rem;
@@ -60,12 +60,21 @@
     }
 
     .link-item:hover {
-      background: #e9e2da;
+      background: #ece4dc;
     }
 
     .link-item img {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .wifi-info {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      line-height: 1.4;
     }
 
     footer {
@@ -91,7 +100,7 @@
     .xicaras img {
       position: absolute;
       width: 60px;
-      opacity: 0.1;
+      opacity: 0.07;
       animation: flutuar 20s linear infinite;
     }
 
@@ -103,15 +112,14 @@
         transform: translateY(-100vh) rotate(360deg);
       }
     }
-
   </style>
 </head>
 <body>
 
   <div class="xicaras">
-    <img src="Xica.png" style="left: 10%; animation-delay: 0s;" />
-    <img src="Xica.png" style="left: 40%; animation-delay: 5s;" />
-    <img src="Xica.png" style="left: 70%; animation-delay: 10s;" />
+    <img src="Xica.png" style="left: 15%; animation-delay: 0s;" />
+    <img src="Xica.png" style="left: 50%; animation-delay: 5s;" />
+    <img src="Xica.png" style="left: 80%; animation-delay: 10s;" />
   </div>
 
   <h1>Fábulas Café</h1>
@@ -134,7 +142,11 @@
 
   <div class="link-item">
     <img src="wifi.png" alt="Wi-Fi" />
-    Conecte-se à nossa rede Wi-Fi<br><strong>fábulas café</strong><br><strong>Senha: Cafe2025</strong>
+    <div class="wifi-info">
+      <strong>Conecte-se à nossa rede Wi-Fi</strong>
+      Rede: <strong>fábulas café</strong><br>
+      Senha: <strong>Cafe2025</strong>
+    </div>
   </div>
 
   <footer>
