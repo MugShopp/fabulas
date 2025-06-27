@@ -5,108 +5,82 @@
   <title>Fábulas Café</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #f5f0e6, #d8cfc4);
+      overflow: hidden;
+      position: relative;
     }
 
-    body {
-      background: linear-gradient(to bottom right, #fdf6ec, #f1e4d0);
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      height: 100vh;
+    .container {
+      text-align: center;
+      padding: 40px 20px;
       position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #4e342e;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .link {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      color: #4b2e2e;
-      padding: 20px;
-    }
-
-    .mensagem {
-      font-size: 28px;
-      text-align: center;
-      animation: fadeInUp 2s ease-out;
-      white-space: pre-line;
-      z-index: 2;
-      margin-bottom: 30px;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .icon-link {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      padding: 15px 20px;
-      margin: 10px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 15px 0;
       text-decoration: none;
-      color: #4b2e2e;
-      font-size: 1.1em;
-      transition: background 0.3s ease;
-      width: 100%;
-      max-width: 400px;
+      color: #4e342e;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    .icon-link:hover {
-      background: #fff2e0;
-    }
-
-    .icon-link img {
+    .link img {
       width: 32px;
       height: 32px;
+      margin-right: 12px;
     }
 
-    .logo-final {
+    .logo {
       margin-top: 40px;
-      opacity: 0.8;
-      z-index: 2;
     }
 
-    .logo-final img {
+    .logo img {
       width: 100px;
     }
 
-    .floating {
+    /* xícaras flutuando */
+    .xicaras {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
       overflow: hidden;
       z-index: 1;
+      pointer-events: none;
     }
 
-    .cup {
+    .xicara {
       position: absolute;
       width: 40px;
       height: 40px;
       background-image: url('Xica.png');
       background-size: cover;
-      animation: floatUp 12s linear infinite;
-      opacity: 0.12;
+      animation: flutuar 10s linear infinite;
+      opacity: 0.6;
     }
 
-    @keyframes floatUp {
+    @keyframes flutuar {
       0% {
         transform: translateY(100vh) scale(0.8);
         opacity: 0;
       }
       30% {
-        opacity: 0.6;
+        opacity: 1;
       }
       100% {
         transform: translateY(-10vh) scale(1.2);
@@ -117,46 +91,44 @@
 </head>
 <body>
 
-  <div class="mensagem">Bem-vindo ao Fábulas Café ☕\nEscolha abaixo uma opção:</div>
+  <div class="container">
+    <h1>Fábulas Café</h1>
 
-  <a class="icon-link" href="https://wa.me/message/XJOCYNPNDO4DD1" target="_blank">
-    <img src="whats.png" alt="WhatsApp"/>
-    Anote nosso número na sua agenda
-  </a>
+    <a class="link" href="https://wa.me/message/XJOCYNPNDO4DD1" target="_blank">
+      <img src="whats.png" alt="WhatsApp" /> Anote nosso número na sua agenda
+    </a>
 
-  <a class="icon-link" href="https://g.page/r/CS9Wjb4xq5aJEBE/review" target="_blank">
-    <img src="google.png" alt="Google Avaliações"/>
-    Avalie-nos no Google
-  </a>
+    <a class="link" href="https://g.page/r/CS9Wjb4xq5aJEBE/review" target="_blank">
+      <img src="google.png" alt="Google" /> Avalie-nos no Google
+    </a>
 
-  <a class="icon-link" href="https://www.instagram.com/mug.shopp?igsh=NHMxZ3pvZXVudGdq" target="_blank">
-    <img src="insta.png" alt="Instagram"/>
-    Siga-nos no Instagram
-  </a>
+    <a class="link" href="https://www.instagram.com/mug.shopp?igsh=NHMxZ3pvZXVudGdq" target="_blank">
+      <img src="insta.png" alt="Instagram" /> Siga-nos no Instagram
+    </a>
 
-  <div class="icon-link" style="cursor: default;">
-    <img src="wifi.png" alt="Wi-Fi"/>
-    Conecte-se à nossa rede Wi-Fi:<br/>
-    <strong>fábulas café</strong><br/>
-    Senha: <strong>Cafe2025</strong>
+    <div class="link">
+      <img src="wifi.jpg" alt="Wi-Fi" />
+      <span>Conecte-se à nossa rede Wi-Fi<br><strong>Rede:</strong> fábulas café<br><strong>Senha:</strong> Cafe2025</span>
+    </div>
+
+    <div class="logo">
+      <img src="Fabu.jpg" alt="Logo Fábulas" />
+    </div>
   </div>
 
-  <div class="logo-final">
-    <img src="Fabu.png" alt="Logo Fábulas Café" />
-  </div>
-
-  <div class="floating" id="floating"></div>
+  <div class="xicaras" id="xicaras"></div>
 
   <script>
-    function createCup() {
-      const cup = document.createElement('div');
-      cup.classList.add('cup');
-      cup.style.left = Math.random() * 100 + 'vw';
-      cup.style.animationDuration = 8 + Math.random() * 4 + 's';
-      document.getElementById('floating').appendChild(cup);
-      setTimeout(() => cup.remove(), 12000);
+    function criarXicara() {
+      const xicara = document.createElement('div');
+      xicara.classList.add('xicara');
+      xicara.style.left = Math.random() * 100 + 'vw';
+      xicara.style.animationDuration = 8 + Math.random() * 4 + 's';
+      document.getElementById('xicaras').appendChild(xicara);
+      setTimeout(() => xicara.remove(), 12000);
     }
-    setInterval(createCup, 300);
+
+    setInterval(criarXicara, 300);
   </script>
 
 </body>
