@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A Cigarra e a Formiga | Fábulas</title>
   <style>
-    /* ...seu CSS existente... */
-
     body {
       margin: 0;
       padding: 40px 20px;
@@ -41,7 +39,6 @@
       animation-iteration-count: infinite;
     }
 
-    /* Criação das partículas com diferentes tamanhos e animações */
     .sparkle:nth-child(1) {
       width: 6px; height: 6px;
       top: 20%;
@@ -78,14 +75,11 @@
       animation-delay: 1s;
     }
 
-    /* Movimento vertical suave para dar impressão de flutuar */
     @keyframes sparkleMove {
       0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
       50% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
       100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
     }
-
-    /* Seu CSS restante continua aqui (main, h1, etc.) */
 
     main {
       max-width: 700px;
@@ -116,6 +110,13 @@
       margin-top: -10px;
       color: #6b5840;
     }
+    .ilustracao {
+      display: block;
+      margin: 25px auto;
+      max-width: 180px; /* 50% maior que 120px */
+      opacity: 0.8;
+      z-index: 1;
+    }
     .moral {
       margin-top: 30px;
       padding: 20px;
@@ -135,14 +136,6 @@
       line-height: 1.6;
       box-shadow: 1px 1px 5px rgba(184,169,120,0.2);
     }
-    .ilustracao {
-      position: absolute;
-      bottom: 30px;
-      right: 30px;
-      max-width: 120px;
-      opacity: 0.8;
-      z-index: 0;
-    }
     footer {
       text-align: center;
       margin-top: 60px;
@@ -157,7 +150,6 @@
   </style>
 </head>
 <body>
-  <!-- Contêiner das partículas -->
   <div class="sparkles">
     <div class="sparkle"></div>
     <div class="sparkle"></div>
@@ -181,6 +173,8 @@
     <p>A formiga respondeu:</p>
     <p>— Durante o verão, eu trabalhei enquanto você cantava. Agora dance para espantar o frio.</p>
 
+    <img class="ilustracao" src="aformiga.png" alt="Ilustração da formiga e da cigarra" />
+
     <div class="moral">
       A leveza da arte é bela, mas o trabalho silencioso é o que sustenta os dias difíceis. A sabedoria vive no equilíbrio entre sonho e preparação.
     </div>
@@ -188,12 +182,10 @@
     <div class="reflexao">
       Nesta fábula, somos convidados a ponderar o equilíbrio entre o prazer do instante e a prudência do futuro. A cigarra, símbolo da arte e do deleite, contrasta com a formiga, arquiteta do esforço e da disciplina. A verdadeira sabedoria reside em harmonizar esses polos: cultivar nossos sonhos e, ao mesmo tempo, preparar-nos para os desafios inevitáveis da vida. Assim, a existência ganha profundidade e significado, numa dança delicada entre o ser e o agir.
     </div>
-
-    <img class="ilustracao" src="aformiga.png" alt="Ilustração da formiga e da cigarra" />
   </main>
 
   <footer>
-    <img src="logo-alta.png" alt="Logo MugShopp" />
+    <img src="logosemfundo.png" alt="Logo MugShopp" />
     Feito por MugShopp Presentes Personalizados.
   </footer>
 </body>
