@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Cigarra e a Formiga | Fábulas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: #fdf8f1;
+      font-family: 'Cormorant Garamond', serif;
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+      position: relative;
+      animation: fadeIn 2s ease;
+    }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .brilhos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: flutuar 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes flutuar {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100px); }
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to right, #b38e5d, #e1c188);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brilho 5s linear infinite;
+    }
+
+    @keyframes brilho {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .autor {
+      text-align: center;
+      font-style: italic;
+      margin-top: -10px;
+      color: #6b5840;
+    }
+
+    .moral {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 4px solid #b38e5d;
+      background: #f5f0e6;
+      font-style: italic;
+    }
+
+    .ilustracao {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      max-width: 120px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #7c6f5d;
+    }
+
+    footer img {
+      max-width: 100px;
+      display: block;
+      margin: 10px auto 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="brilhos"></div>
+  <main>
+    <h1>A Cigarra e a Formiga</h1>
+    <p class="autor">por Esopo</p>
+
+    <p>Era uma vez uma formiga trabalhadora que passava os dias de verão juntando grãos e armazenando comida para o inverno. Enquanto isso, uma cigarra cantava alegremente sob o sol, zombando da formiga por trabalhar tanto.</p>
+
+    <p>— Por que você não aproveita o verão comigo? — dizia a cigarra.</p>
+
+    <p>— Estou me preparando para os tempos difíceis — respondeu a formiga. — Você também deveria.</p>
+
+    <p>Mas a cigarra ignorou o conselho e continuou cantando. Quando o inverno chegou, a cigarra não tinha comida e foi bater à porta da formiga, pedindo ajuda.</p>
+
+    <p>A formiga respondeu:</p>
+    <p>— Durante o verão, eu trabalhei enquanto você cantava. Agora dance para espantar o frio.</p>
+
+    <div class="moral">
+      A leveza da arte é bela, mas o trabalho silencioso é o que sustenta os dias difíceis. A sabedoria vive no equilíbrio entre sonho e preparação.
+    </div>
+
+    <img class="ilustracao" src="imagens/aformiga.png" alt="Ilustração da formiga e da cigarra">
+  </main>
+
+  <footer>
+    <img src="imagens/Logo%20Alta%20Resolução.png" alt="Logo MugShopp">
+    Feito por MugShopp Presentes Personalizados.
+  </footer>
+</body>
+</html>
