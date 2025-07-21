@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Raposa e as Uvas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Marcellus', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fef6e4, #fcd5ce);
+      color: #40210f;
+      position: relative;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+    main {
+      max-width: 750px;
+      margin: 30px auto;
+      padding: 0 20px 60px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #5a2e12;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .fabula-img {
+      display: block;
+      margin: 40px auto;
+      max-width: 75%;
+    }
+    .moral {
+      font-style: italic;
+      font-weight: bold;
+      margin-top: 40px;
+      color: #7a341c;
+    }
+    .reflexao {
+      background-color: #fff6f0;
+      padding: 15px 20px;
+      border-left: 5px solid #c87f4f;
+      margin-top: 30px;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      padding: 20px;
+      color: #916c4e;
+    }
+
+    /* Brilhos */
+    .sparkle {
+      position: fixed;
+      top: -10px;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #fff 0%, #fffa 40%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateY(80vh) translateX(40px);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(100vh) translateX(-40px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logosemfundo.png" alt="Logo da coleção Fábulas" />
+  </header>
+  <main>
+    <h1>A Raposa e as Uvas</h1>
+
+    <p>Uma raposa esfomeada avistou um belo parreiral com uvas maduras e suculentas.</p>
+
+    <p>Tentou alcançá-las dando pulos e mais pulos, mas estavam altas demais.</p>
+
+    <p>Depois de muitas tentativas fracassadas, exausta, a raposa se afastou dizendo:</p>
+
+    <p>— Bah! Essas uvas estão verdes mesmo. Nem queria...</p>
+
+    <img src="araposa.png" alt="Ilustração da fábula A Raposa e as Uvas" class="fabula-img"/>
+
+    <p class="moral">Moral: “É fácil desprezar o que não se pode ter.”</p>
+
+    <div class="reflexao">
+      <strong>Reflexão:</strong>  
+      Quantas vezes racionalizamos uma perda dizendo que “não era pra ser”?  
+      Essa fábula nos convida a observar quando o orgulho disfarça a frustração —  
+      e a transformar o incômodo em aprendizado, não em desprezo.
+    </div>
+  </main>
+
+  <footer>
+    Feito por MugShopp • Fábulas para pensar 🌿
+  </footer>
+
+  <!-- Brilhinhos mágicos -->
+  <script>
+    function criarBrilhos() {
+      for (let i = 0; i < 25; i++) {
+        const brilho = document.createElement('div');
+        brilho.className = 'sparkle';
+        brilho.style.left = Math.random() * 100 + 'vw';
+        brilho.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        document.body.appendChild(brilho);
+      }
+    }
+    criarBrilhos();
+  </script>
+</body>
+</html>
