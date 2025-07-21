@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O Galo e a Pérola</title>
+  <style>
+    body {
+      background-color: #fffaf0;
+      color: #333;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header img {
+      max-height: 80px;
+    }
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .fabula {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .ilustracao {
+      display: block;
+      margin: 40px auto;
+      max-width: 300px;
+      border-radius: 8px;
+      opacity: 0.9;
+    }
+    .moral {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      color: #444;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+    .reflexao {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    /* Partículas brilhantes */
+    .sparkle {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #ffd700, transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle 5s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logosemfundo.png" alt="Logotipo da Fábulas">
+    <h1>Fábulas de Esopo</h1>
+  </header>
+
+  <div class="fabula">
+    <h2>O Galo e a Pérola</h2>
+    <p>
+      Certo dia, um galo ciscava no terreiro à procura de comida. Ele estava com muita fome, procurando grãos entre a palha e o barro, quando encontrou uma linda pérola.
+    </p>
+    <p>
+      “O que eu faria com isso?”, disse o galo. “Prefiro um simples grão de milho do que essa joia inútil para mim.”
+    </p>
+
+    <img class="ilustracao" src="ogalo.png" alt="Ilustração da fábula O Galo e a Pérola">
+
+    <div class="moral">
+      Moral: Aquilo que não tem valor prático para alguém, mesmo sendo precioso, será ignorado.
+    </div>
+
+    <div class="reflexao">
+      ✨ <strong>Reflexão Filosófica:</strong>  
+      Esta fábula nos provoca a pensar sobre o valor subjetivo das coisas.  
+      Quantas vezes descartamos algo valioso por não compreendermos sua essência?  
+      O galo representa aquele que, limitado pela necessidade imediata, deixa escapar algo de valor duradouro.  
+      Será que em nossas rotinas também estamos rejeitando “pérolas” por só procurarmos “grãos”?
+    </div>
+  </div>
+
+  <footer>
+    Feito por MugShopp ✨
+  </footer>
+
+  <!-- Brilhos flutuando -->
+  <script>
+    function criarParticula() {
+      const p = document.createElement('div');
+      p.classList.add('sparkle');
+      p.style.left = Math.random() * window.innerWidth + 'px';
+      p.style.top = window.innerHeight + 'px';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 5000);
+    }
+    setInterval(criarParticula, 300);
+  </script>
+</body>
+</html>
