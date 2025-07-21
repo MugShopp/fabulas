@@ -1,107 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A Raposa e as Uvas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Raposa e as Uvas | Fábulas</title>
   <style>
     body {
-      font-family: 'Marcellus', serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #fef6e4, #fcd5ce);
-      color: #40210f;
-      position: relative;
+      padding: 40px 20px;
+      background: #fdf8f1;
+      font-family: 'Cormorant Garamond', serif;
+      color: #333;
+      line-height: 1.8;
       overflow-x: hidden;
+      position: relative;
+      animation: fadeIn 2s ease;
     }
-    header {
-      text-align: center;
-      padding: 30px 20px 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    header img {
-      max-width: 180px;
-      height: auto;
+
+    /* Efeito pó mágico - partículas de brilho */
+    .sparkles {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      overflow: visible;
     }
+
+    .sparkle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      opacity: 0.8;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .sparkle:nth-child(1) {
+      width: 6px; height: 6px;
+      top: 20%;
+      left: 10%;
+      animation: sparkleMove 12s linear infinite;
+      animation-delay: 0s;
+    }
+    .sparkle:nth-child(2) {
+      width: 4px; height: 4px;
+      top: 40%;
+      left: 30%;
+      animation: sparkleMove 15s linear infinite;
+      animation-delay: 4s;
+    }
+    .sparkle:nth-child(3) {
+      width: 5px; height: 5px;
+      top: 60%;
+      left: 60%;
+      animation: sparkleMove 10s linear infinite;
+      animation-delay: 2s;
+    }
+    .sparkle:nth-child(4) {
+      width: 3px; height: 3px;
+      top: 80%;
+      left: 80%;
+      animation: sparkleMove 14s linear infinite;
+      animation-delay: 7s;
+    }
+    .sparkle:nth-child(5) {
+      width: 4px; height: 4px;
+      top: 35%;
+      left: 75%;
+      animation: sparkleMove 18s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes sparkleMove {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
+      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+    }
+
     main {
-      max-width: 750px;
-      margin: 30px auto;
-      padding: 0 20px 60px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 8px;
+      position: relative;
+      z-index: 1;
     }
+
     h1 {
+      font-size: 2.8rem;
       text-align: center;
-      font-size: 2em;
-      margin-bottom: 30px;
-      color: #5a2e12;
+      position: relative;
+      background: linear-gradient(to right, #b38e5d, #e1c188);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brilho 5s linear infinite;
     }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin-bottom: 20px;
+    @keyframes brilho {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
-    .fabula-img {
+    .autor {
+      text-align: center;
+      font-style: italic;
+      margin-top: -10px;
+      color: #6b5840;
+    }
+    .ilustracao {
       display: block;
-      margin: 40px auto;
-      max-width: 75%;
+      margin: 25px auto;
+      max-width: 180px;
+      opacity: 0.8;
+      z-index: 1;
     }
     .moral {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 4px solid #b38e5d;
+      background: #f5f0e6;
       font-style: italic;
-      font-weight: bold;
-      margin-top: 40px;
-      color: #7a341c;
     }
     .reflexao {
-      background-color: #fff6f0;
-      padding: 15px 20px;
-      border-left: 5px solid #c87f4f;
-      margin-top: 30px;
+      margin-top: 25px;
+      padding: 18px 22px;
+      border: 1.5px solid #b8a978;
+      background: #faf7f0;
+      font-style: italic;
+      color: #5a4f30;
       border-radius: 6px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      box-shadow: 1px 1px 5px rgba(184,169,120,0.2);
     }
     footer {
       text-align: center;
-      font-size: 0.8em;
-      padding: 20px;
-      color: #916c4e;
+      margin-top: 60px;
+      font-size: 0.7rem;
+      color: #7c6f5d;
     }
-
-    /* Brilhos */
-    .sparkle {
-      position: fixed;
-      top: -10px;
-      width: 8px;
-      height: 8px;
-      background: radial-gradient(circle, #fff 0%, #fffa 40%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: float 6s infinite ease-in-out;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translateY(80vh) translateX(40px);
-        opacity: 0.4;
-      }
-      100% {
-        transform: translateY(100vh) translateX(-40px);
-        opacity: 0;
-      }
+    footer img {
+      max-width: 150px;
+      display: block;
+      margin: 10px auto 5px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logosemfundo.png" alt="Logo da coleção Fábulas" />
-  </header>
+  <div class="sparkles">
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+  </div>
+
   <main>
     <h1>A Raposa e as Uvas</h1>
+    <p class="autor">por Esopo</p>
 
     <p>Uma raposa esfomeada avistou um belo parreiral com uvas maduras e suculentas.</p>
 
@@ -111,34 +170,21 @@
 
     <p>— Bah! Essas uvas estão verdes mesmo. Nem queria...</p>
 
-    <img src="araposa.png" alt="Ilustração da fábula A Raposa e as Uvas" class="fabula-img"/>
+    <img class="ilustracao" src="araposa.png" alt="Ilustração da raposa e as uvas" />
 
-    <p class="moral">Moral: “É fácil desprezar o que não se pode ter.”</p>
+    <div class="moral">
+      “É fácil desprezar o que não se pode ter.”
+    </div>
 
     <div class="reflexao">
-      <strong>Reflexão:</strong>  
       Quantas vezes racionalizamos uma perda dizendo que “não era pra ser”?  
-      Essa fábula nos convida a observar quando o orgulho disfarça a frustração —  
-      e a transformar o incômodo em aprendizado, não em desprezo.
+      Essa fábula nos convida a observar quando o orgulho disfarça a frustração — e a transformar o incômodo em aprendizado, não em desprezo.
     </div>
   </main>
 
   <footer>
-    Feito por MugShopp • Fábulas para pensar 🌿
+    <img src="logosemfundo.png" alt="Logo MugShopp" />
+    Feito por MugShopp Presentes Personalizados.
   </footer>
-
-  <!-- Brilhinhos mágicos -->
-  <script>
-    function criarBrilhos() {
-      for (let i = 0; i < 25; i++) {
-        const brilho = document.createElement('div');
-        brilho.className = 'sparkle';
-        brilho.style.left = Math.random() * 100 + 'vw';
-        brilho.style.animationDuration = (Math.random() * 4 + 4) + 's';
-        document.body.appendChild(brilho);
-      }
-    }
-    criarBrilhos();
-  </script>
 </body>
 </html>
