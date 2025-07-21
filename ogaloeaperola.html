@@ -3,132 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O Galo e a Pérola</title>
+  <title>O Galo e a Pérola - Fábulas de Esopo</title>
   <style>
     body {
-      background-color: #fffaf0;
-      color: #333;
-      font-family: 'Georgia', serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background: linear-gradient(to bottom, #fffaf0, #f0e6ff);
+      font-family: 'Georgia', serif;
+      color: #333;
       position: relative;
       overflow-x: hidden;
     }
     header {
       text-align: center;
-      margin-bottom: 30px;
+      padding: 30px 20px 10px;
     }
     header img {
-      max-height: 80px;
+      width: 180px;
+    }
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
     h1 {
-      font-size: 2em;
       text-align: center;
-      margin-bottom: 10px;
+      color: #5a3e85;
     }
-    .fabula {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.2em;
+    p {
       line-height: 1.6;
-    }
-    .ilustracao {
-      display: block;
-      margin: 40px auto;
-      max-width: 300px;
-      border-radius: 8px;
-      opacity: 0.9;
+      font-size: 18px;
+      text-align: justify;
     }
     .moral {
-      margin-top: 40px;
-      font-weight: bold;
-      font-size: 1.2em;
-      text-align: center;
-      color: #444;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
-    }
-    .reflexao {
-      margin-top: 20px;
       font-style: italic;
-      font-size: 1.1em;
-      color: #666;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #5a3e85;
     }
     footer {
       text-align: center;
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #999;
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
     }
-
-    /* Partículas brilhantes */
+    .illustration {
+      display: block;
+      margin: 30px auto;
+      width: 75%;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
     .sparkle {
       position: fixed;
-      width: 4px;
-      height: 4px;
-      background: radial-gradient(circle, #ffd700, transparent);
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #fff 0%, #ffd 80%, transparent 100%);
       border-radius: 50%;
       pointer-events: none;
-      animation: sparkle 5s linear infinite;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.6;
     }
-
-    @keyframes sparkle {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) scale(0.5);
-        opacity: 0;
-      }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-200px) scale(1.2); opacity: 0.4; }
+      100% { transform: translateY(0) scale(1); opacity: 0.8; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logosemfundo.png" alt="Logotipo da Fábulas">
-    <h1>Fábulas de Esopo</h1>
+    <img src="logosemfundo.png" alt="Logo MugShopp" />
   </header>
-
-  <div class="fabula">
-    <h2>O Galo e a Pérola</h2>
+  <main>
+    <h1>O Galo e a Pérola</h1>
     <p>
-      Certo dia, um galo ciscava no terreiro à procura de comida. Ele estava com muita fome, procurando grãos entre a palha e o barro, quando encontrou uma linda pérola.
+      Um galo andava ciscando o chão à procura de comida. No meio da terra fofa,
+      encontrou uma linda pérola brilhante. Admirou sua beleza, virou de um lado,
+      virou do outro, e pensou:
     </p>
     <p>
-      “O que eu faria com isso?”, disse o galo. “Prefiro um simples grão de milho do que essa joia inútil para mim.”
+      — Ah, se eu fosse um joalheiro, ficaria encantado com esse achado. Mas de que me serve uma pérola agora? Eu preciso é de um grão de milho!
+    </p>
+    
+    <img src="ogalo.png" alt="Ilustração da fábula O Galo e a Pérola" class="illustration" />
+    
+    <p class="moral">Moral da história:  
+      <br/>“Objetos valiosos são inúteis para quem não sabe apreciá-los.”</p>
+    
+    <p>
+      <strong>Reflexão filosófica:</strong><br/>
+      Essa fábula convida à reflexão sobre o valor das coisas — não o valor de mercado, mas o valor percebido.  
+      O que é um tesouro nas mãos de um, pode não significar nada para outro.  
+      Vivemos cercados de pérolas que, às vezes, desprezamos por não compreendê-las.  
+      A verdadeira sabedoria está em aprender a reconhecer o valor sutil das experiências, das pessoas e dos detalhes.
     </p>
 
-    <img class="ilustracao" src="ogalo.png" alt="Ilustração da fábula O Galo e a Pérola">
+    <footer>
+      Feito por MugShopp com carinho 💜
+    </footer>
+  </main>
 
-    <div class="moral">
-      Moral: Aquilo que não tem valor prático para alguém, mesmo sendo precioso, será ignorado.
-    </div>
-
-    <div class="reflexao">
-      ✨ <strong>Reflexão Filosófica:</strong>  
-      Esta fábula nos provoca a pensar sobre o valor subjetivo das coisas.  
-      Quantas vezes descartamos algo valioso por não compreendermos sua essência?  
-      O galo representa aquele que, limitado pela necessidade imediata, deixa escapar algo de valor duradouro.  
-      Será que em nossas rotinas também estamos rejeitando “pérolas” por só procurarmos “grãos”?
-    </div>
-  </div>
-
-  <footer>
-    Feito por MugShopp ✨
-  </footer>
-
-  <!-- Brilhos flutuando -->
+  <!-- Pozinhos flutuantes -->
   <script>
-    function criarParticula() {
-      const p = document.createElement('div');
-      p.classList.add('sparkle');
-      p.style.left = Math.random() * window.innerWidth + 'px';
-      p.style.top = window.innerHeight + 'px';
-      document.body.appendChild(p);
-      setTimeout(() => p.remove(), 5000);
+    function criarBrilhos(qtd) {
+      for (let i = 0; i < qtd; i++) {
+        const brilho = document.createElement("div");
+        brilho.className = "sparkle";
+        brilho.style.left = Math.random() * 100 + "vw";
+        brilho.style.top = Math.random() * 100 + "vh";
+        brilho.style.animationDelay = Math.random() * 5 + "s";
+        brilho.style.animationDuration = 4 + Math.random() * 4 + "s";
+        document.body.appendChild(brilho);
+      }
     }
-    setInterval(criarParticula, 300);
+    criarBrilhos(50);
   </script>
 </body>
 </html>
