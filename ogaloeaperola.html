@@ -1,128 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O Galo e a Pérola - Fábulas de Esopo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Galo e a Pérola | Fábulas</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #fffaf0, #f0e6ff);
-      font-family: 'Georgia', serif;
+      padding: 40px 20px;
+      background: #fdf8f1;
+      font-family: 'Cormorant Garamond', serif;
       color: #333;
-      position: relative;
+      line-height: 1.8;
       overflow-x: hidden;
+      position: relative;
+      animation: fadeIn 2s ease;
     }
-    header {
-      text-align: center;
-      padding: 30px 20px 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    header img {
-      width: 180px;
+
+    .sparkles {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      overflow: visible;
     }
+
+    .sparkle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      opacity: 0.8;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .sparkle:nth-child(1) {
+      width: 6px; height: 6px;
+      top: 20%;
+      left: 10%;
+      animation: sparkleMove 12s linear infinite;
+      animation-delay: 0s;
+    }
+    .sparkle:nth-child(2) {
+      width: 4px; height: 4px;
+      top: 40%;
+      left: 30%;
+      animation: sparkleMove 15s linear infinite;
+      animation-delay: 4s;
+    }
+    .sparkle:nth-child(3) {
+      width: 5px; height: 5px;
+      top: 60%;
+      left: 60%;
+      animation: sparkleMove 10s linear infinite;
+      animation-delay: 2s;
+    }
+    .sparkle:nth-child(4) {
+      width: 3px; height: 3px;
+      top: 80%;
+      left: 80%;
+      animation: sparkleMove 14s linear infinite;
+      animation-delay: 7s;
+    }
+    .sparkle:nth-child(5) {
+      width: 4px; height: 4px;
+      top: 35%;
+      left: 75%;
+      animation: sparkleMove 18s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes sparkleMove {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
+      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+    }
+
     main {
       max-width: 700px;
       margin: 0 auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 8px;
       position: relative;
       z-index: 1;
     }
+
     h1 {
+      font-size: 2.8rem;
       text-align: center;
-      color: #5a3e85;
+      position: relative;
+      background: linear-gradient(to right, #b38e5d, #e1c188);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brilho 5s linear infinite;
     }
-    p {
-      line-height: 1.6;
-      font-size: 18px;
-      text-align: justify;
+    @keyframes brilho {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .autor {
+      text-align: center;
+      font-style: italic;
+      margin-top: -10px;
+      color: #6b5840;
+    }
+    .ilustracao {
+      display: block;
+      margin: 25px auto;
+      max-width: 180px;
+      opacity: 0.8;
+      z-index: 1;
     }
     .moral {
-      font-style: italic;
-      font-weight: bold;
       margin-top: 30px;
-      color: #5a3e85;
+      padding: 20px;
+      border-left: 4px solid #b38e5d;
+      background: #f5f0e6;
+      font-style: italic;
+    }
+    .reflexao {
+      margin-top: 25px;
+      padding: 18px 22px;
+      border: 1.5px solid #b8a978;
+      background: #faf7f0;
+      font-style: italic;
+      color: #5a4f30;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      box-shadow: 1px 1px 5px rgba(184,169,120,0.2);
     }
     footer {
       text-align: center;
-      font-size: 14px;
-      color: #888;
-      margin-top: 40px;
+      margin-top: 60px;
+      font-size: 0.7rem;
+      color: #7c6f5d;
     }
-    .illustration {
+    footer img {
+      max-width: 150px;
       display: block;
-      margin: 30px auto;
-      width: 75%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-    .sparkle {
-      position: fixed;
-      width: 6px;
-      height: 6px;
-      background: radial-gradient(circle, #fff 0%, #ffd 80%, transparent 100%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: float 6s infinite ease-in-out;
-      opacity: 0.6;
-    }
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); opacity: 0.8; }
-      50% { transform: translateY(-200px) scale(1.2); opacity: 0.4; }
-      100% { transform: translateY(0) scale(1); opacity: 0.8; }
+      margin: 10px auto 5px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logosemfundo.png" alt="Logo MugShopp" />
-  </header>
+  <div class="sparkles">
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+  </div>
+
   <main>
     <h1>O Galo e a Pérola</h1>
-    <p>
-      Um galo andava ciscando o chão à procura de comida. No meio da terra fofa,
-      encontrou uma linda pérola brilhante. Admirou sua beleza, virou de um lado,
-      virou do outro, e pensou:
-    </p>
-    <p>
-      — Ah, se eu fosse um joalheiro, ficaria encantado com esse achado. Mas de que me serve uma pérola agora? Eu preciso é de um grão de milho!
-    </p>
-    
-    <img src="ogalo.png" alt="Ilustração da fábula O Galo e a Pérola" class="illustration" />
-    
-    <p class="moral">Moral da história:  
-      <br/>“Objetos valiosos são inúteis para quem não sabe apreciá-los.”</p>
-    
-    <p>
-      <strong>Reflexão filosófica:</strong><br/>
-      Essa fábula convida à reflexão sobre o valor das coisas — não o valor de mercado, mas o valor percebido.  
-      O que é um tesouro nas mãos de um, pode não significar nada para outro.  
-      Vivemos cercados de pérolas que, às vezes, desprezamos por não compreendê-las.  
-      A verdadeira sabedoria está em aprender a reconhecer o valor sutil das experiências, das pessoas e dos detalhes.
-    </p>
+    <p class="autor">por Esopo</p>
 
-    <footer>
-      Feito por MugShopp com carinho 💜
-    </footer>
+    <p>Um Galo revirava o chão do galinheiro em busca de comida, quando encontrou uma reluzente pérola.</p>
+
+    <p>— Ah, bela coisa és tu, sem dúvida — disse o Galo —, mas eu preferia um simples grão de cevada a todas as pérolas do mundo.</p>
+
+    <p>E com isso, seguiu seu caminho, deixando a pérola onde estava.</p>
+
+    <img class="ilustracao" src="ogalo.png" alt="Ilustração do galo e a pérola" />
+
+    <div class="moral">
+      Um objeto valioso não tem utilidade para quem não sabe apreciá-lo.
+    </div>
+
+    <div class="reflexao">
+      Esta fábula nos lembra que o valor das coisas depende de quem as observa.  
+      Uma joia pode ser inútil para quem tem fome, e um livro pode ser ignorado por quem não busca sabedoria.  
+      Às vezes, o que é precioso aos olhos de uns não faz sentido para outros.  
+      Aprender a reconhecer o verdadeiro valor — no momento certo — é uma das chaves da sabedoria.
+    </div>
   </main>
 
-  <!-- Pozinhos flutuantes -->
-  <script>
-    function criarBrilhos(qtd) {
-      for (let i = 0; i < qtd; i++) {
-        const brilho = document.createElement("div");
-        brilho.className = "sparkle";
-        brilho.style.left = Math.random() * 100 + "vw";
-        brilho.style.top = Math.random() * 100 + "vh";
-        brilho.style.animationDelay = Math.random() * 5 + "s";
-        brilho.style.animationDuration = 4 + Math.random() * 4 + "s";
-        document.body.appendChild(brilho);
-      }
-    }
-    criarBrilhos(50);
-  </script>
+  <footer>
+    <img src="logosemfundo.png" alt="Logo MugShopp" />
+    Feito por MugShopp Presentes Personalizados.
+  </footer>
 </body>
 </html>
